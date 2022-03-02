@@ -6,7 +6,8 @@ class Movies extends Component {
     state = { movies:getMovies()}; 
 
     handleDelete = (movie) =>{
-        console.log(movie)
+        const movies = this.state.movies.filter( m => m._id !== movie._id); //retrieves all the movies except the movie we just selected -mapping by id
+        this.setState({ movies}); //this will override the properties of our state object
     }
 
     render() { 
